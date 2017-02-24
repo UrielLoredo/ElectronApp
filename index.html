@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Electron app</title>
+    <link href="scss/index.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="node_modules/angular/angular.js"></script>
+  </head>
+  <body>
+    <div class="appMain" ng-app="taskList">
+      <div class="appHeader">
+        <span><i class="mdi mdi-carrot"></i></span>
+        <h1 class="appTitle">Agregar tarea</h1>
+      </div>
+      <div class="appWrapp" ng-controller="taskCtrl">
+        <div class="row">
+        <div class="column col-4">
+            <div class="appSidebar">
+              <form class="appTaskForm">
+                <label class="" for="titleTask">
+                Título
+                  <input class="appTaskField" name="titleTask" ng-model="addTitleTask" />
+                </label>
+                <label for="shortDescriptionTask">
+                  Descripción corta
+                  <input class="appTaskField" name="shortDescriptionTask" ng-model="addDescriptionTask" />
+                </label>
+                <label for="teamTask">
+                  Involucrados
+                  <input class="appTaskField" name="teamTask" ng-model="addTeamTask" placeholder="Agregar" >
+                </label>
+                <button class="appTaskAdd--btn" type="button" ng-click="addItem()"><i class="mdi mdi-plus"></i></button>
+                <p>{{errortext}}</p>
+              </form>
+            </div>
+          </div>
+          <div class="column col-8">
+
+             <ul class="appTaskList">
+              <li ng-repeat="task in tasks">
+                  <span class="appTaskList--title">{{task.title}}</span>
+                  <span class="appTaskList--desc">{{task.description}}</span>
+
+                 <div class="appTaskList--team">
+                    <span class="appTaskList--team-label">Miembros: </span>
+                    <small class="appTaskList--team-list">{{task.team}}</small>
+                 </div>
+                  <button class="appTaskList--remove" title="Mandar a la verga" type="button" ng-click="removeItem($index)"><i class="mdi mdi-delete"></i></button>
+              </li>
+            </ul>
+          </div>
+          
+        </div>
+       
+    </div>
+    </div>
+
+  </body>
+  
+  <script>
+
+    // You can also require other files to run in this process
+  require('./renderer.js')
+  </script>
+</html>

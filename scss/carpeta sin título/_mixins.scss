@@ -1,0 +1,36 @@
+@mixin basic_transition($time) {
+	transition: all $time ease-in-out; 
+	-moz-transition: all $time ease-in-out; 
+	-webkit-transition: all $time ease-in-out; 
+	-o-transition: all $time ease-in-out;
+}
+
+@mixin v-center($position: relative) {
+	position: $position;
+	top: 50%;
+	-webkit-transform: translate(0,-50%);
+	-ms-transform: translate(0,-50%);
+	transform: translate(0,-50%);
+}
+
+@mixin h-center($position: relative) {
+	position: $position;
+	left: 50%;
+	-webkit-transform: translate(-50%,0);
+	-ms-transform: translate(-50%,0);
+	transform: translate(-50%,0);
+}
+
+@mixin vh-center($position: relative) {
+	position: $position;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+
+@mixin fw($icon) {
+	content: $icon; // "\f10d"
+	font-family: $faw;
+}

@@ -1,0 +1,143 @@
+@import 'normalize.css';
+@import 'material-design-icons/scss/materialdesignicons.scss';
+html{
+    font-size: 16px;
+}
+body{
+    background: #fff;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-weight: normal;
+    *{
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+.row{
+    margin: 0 auto;
+    max-width: 75rem;
+    &::before, &::after {
+        display: table;
+        content: ' ';
+    }
+}
+.column{
+    float: left;
+    &.col-4{
+        width: 33.333333333333333%;
+    }
+    &.col-8{
+        width: 66.666666666666667%;
+    }
+     &.col-12{
+        width: 100%;
+    }
+}
+.app{
+    &Header{
+        background: #3e50b4;
+        height: 75px;
+        overflow: hidden;
+    }
+    &Sidebar{
+        background: #eee;
+        height: calc( 100vh - 75px );
+    }
+    &Main{
+        overflow: hidden;
+        margin: 0 auto;
+        min-width: 720px;
+        width: 100%;
+    }
+    &Wrapp{
+        overflow: hidden;
+        padding: 0;
+    }
+    &Title{
+        color: #fff;
+        font-size: 2rem;
+        margin: 1rem auto;
+        text-align:center;
+    }
+    &Task{
+        &Form{
+            padding: 10px 20px;
+            label{
+                display: block;
+                margin: 0 auto 10px;
+                width: 100%;
+            }
+        }
+        &Field{
+            height: 36px;
+            margin: 5px 0;
+            padding: 0 10px;
+            width: 100%;
+        }
+        &Add{
+            &--btn{
+                background: #3e50b4;
+                border: none;
+                border-radius: 50%;
+                color: #fff;
+                display: block;
+                height: 36px;
+                margin: 0 auto;
+                text-align: center;
+                width: 36px;
+                &:focus{
+                    border: none;
+                    outline: none;
+                }
+            }
+        }
+        &List{
+            list-style: none;
+            padding: 0;
+            margin: 0 auto;
+            width:90%;
+            >li{
+                border-left: 2px solid #5ae0c8;
+                -webkit-box-shadow: 2px 2px 4px #d5d5d5;
+                -moz-box-shadow: 2px 2px 4px #d5d5d5;
+                -ms-box-shadow: 2px 2px 4px #d5d5d5;
+                box-shadow: 2px 2px 4px #d5d5d5;
+                color: #333;
+                margin: 12px auto;
+                padding: 14px 20px;
+                position:relative;
+            }
+            &--title{
+                font-weight: bold;
+                font-size: 1.3rem;
+                display: block;
+            }
+            &--desc{
+                color: #999;
+                font-size: 1rem;
+                display: block;
+            }
+            &--team{
+                font-size: 0.8rem;
+                display: block;
+                margin: 14px 0 0;
+                &-label{
+                    color: #5ae0c8;
+                    margin-right: 3px;
+                }
+            }
+            &--remove{
+                text-align: center;
+                background: rgba(0,0,0,0);
+                border: none;
+                font-weight: bold;
+                color: #5ae0c8;
+                cursor: pointer;
+                display: inline-block;
+                position: absolute;
+                right: 10px;
+                top: 14px;
+            }
+        }
+    }
+}
